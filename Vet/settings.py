@@ -31,7 +31,11 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'cloudinary',
+    'cloudinary_storage',
+    
     'app_vet',
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -143,3 +147,13 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 MEDIA_URL='/media/'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dwafvifx7',
+    'API_KEY': '169419662824352',
+    'API_SECRET': 'KFXzVt8xZGy_Qq5VzwZ6QVF7jZU'
+}
