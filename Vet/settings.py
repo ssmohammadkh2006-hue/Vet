@@ -99,7 +99,7 @@ STATICFILES_DIRS = [
     BASE_DIR / 'Vet' / 'static'
 ]
 
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # =========================
 # CLOUDINARY (MEDIA FILES)
 # =========================
