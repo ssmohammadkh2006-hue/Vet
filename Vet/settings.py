@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-_myn$*#%=gu2@kig_92+aemkt+ktvpajc4!%t^hhwz)4paso$)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['vet-clinic.onrender.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
