@@ -46,9 +46,6 @@ MIDDLEWARE = [
 ]
 
 
-# =========================
-# URLS / WSGI
-# =========================
 ROOT_URLCONF = 'Vet.urls'
 WSGI_APPLICATION = 'Vet.wsgi.application'
 
@@ -73,7 +70,7 @@ TEMPLATES = [
 
 
 # =========================
-# DATABASE (SQLite)
+# DATABASE
 # =========================
 DATABASES = {
     'default': {
@@ -81,17 +78,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
-
-# =========================
-# PASSWORD VALIDATION
-# =========================
-AUTH_PASSWORD_VALIDATORS = [
-    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
-    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
-    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator'},
-    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
-]
 
 
 # =========================
@@ -104,7 +90,7 @@ USE_TZ = True
 
 
 # =========================
-# STATIC FILES
+# STATIC FILES (WhiteNoise)
 # =========================
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
@@ -115,14 +101,18 @@ STATICFILES_DIRS = [
 
 
 # =========================
-# CLOUDINARY (MEDIA STORAGE)
+# CLOUDINARY (MEDIA FILES)
 # =========================
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'dwafvifx7',
     'API_KEY': '169419662824352',
-    'API_SECRET': 'KFXzVzZ6QVF7jZU'
+    'API_SECRET': 'YOUR_CLOUDINARY_SECRET'
 }
 
+
+# =========================
+# STORAGES (Django 5)
+# =========================
 STORAGES = {
     "default": {
         "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
