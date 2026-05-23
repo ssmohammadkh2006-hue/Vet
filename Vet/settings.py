@@ -103,24 +103,18 @@ STATICFILES_DIRS = [
 # =========================
 # CLOUDINARY (MEDIA FILES)
 # =========================
+import cloudinary
+
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dwafvifx7',
+    'CLOUD_NAME': 'Root',
     'API_KEY': '169419662824352',
-    'API_SECRET': 'YOUR_CLOUDINARY_SECRET'
+    'API_SECRET': 'ZSEX2',
 }
 
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-# =========================
-# STORAGES (Django 5)
-# =========================
-STORAGES = {
-    "default": {
-        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
-    },
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
-}
+
+ 
 
 
 # =========================
