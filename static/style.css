@@ -1,0 +1,1336 @@
+
+
+/* =========================================
+   GLOBAL
+========================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Cairo',sans-serif;
+    background:#f4f7fb;
+    overflow-x:hidden;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+:root{
+    --primary:#246bfd;
+    --secondary:#0f172a;
+    --light:#ffffff;
+    --gray:#64748b;
+    --bg:#f4f7fb;
+    --success:#25D366;
+    --shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar{
+    background:rgba(15,23,42,0.92);
+    backdrop-filter:blur(10px);
+    padding:15px 0;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.navbar{
+
+    background:rgba(15,23,42,0.92);
+
+    backdrop-filter:blur(10px);
+
+    padding:10px 0;
+
+    box-shadow:
+    0 5px 20px rgba(0,0,0,0.1);
+}
+
+
+/* =========================================
+   NAVBAR BRAND
+========================================= */
+
+.navbar-brand{
+
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    color:white !important;
+
+    font-size:24px;
+    font-weight:800;
+
+    padding:
+    8px 16px;
+
+    margin-inline-start:10px;
+
+    border-radius:16px;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(255,255,255,0.10),
+        rgba(255,255,255,0.03)
+    );
+
+    border:
+    1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter:
+    blur(10px);
+
+    -webkit-backdrop-filter:
+    blur(10px);
+
+    box-shadow:
+    0 6px 18px rgba(0,0,0,0.12);
+
+    overflow:hidden;
+
+    transition:
+    all 0.4s ease;
+}
+
+
+/* LIGHT EFFECT */
+
+.navbar-brand::before{
+
+    content:'';
+
+    position:absolute;
+
+    top:-50%;
+    left:-100px;
+
+    width:55px;
+    height:220%;
+
+    background:
+    rgba(255,255,255,0.12);
+
+    transform:
+    rotate(25deg);
+
+    transition:
+    0.8s;
+}
+
+.navbar-brand:hover::before{
+
+    left:130%;
+}
+
+
+/* HOVER */
+
+.navbar-brand:hover{
+
+    transform:
+    translateY(-2px);
+
+    box-shadow:
+    0 12px 30px rgba(37,99,235,0.18);
+}
+
+
+/* ICON */
+
+.navbar-brand i{
+
+    width:36px;
+    height:36px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:12px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #4ade80,
+        #22c55e
+    );
+
+    color:white;
+
+    font-size:16px;
+
+    box-shadow:
+    0 6px 15px rgba(34,197,94,0.25);
+
+    transition:
+    0.4s ease;
+    margin-left: 6px;
+}
+
+.navbar-brand:hover i{
+
+    transform:
+    rotate(-8deg)
+    scale(1.05);
+}
+
+
+.nav-link{
+    color:white !important;
+    margin:0 10px;
+    font-weight:800;
+    position:relative;
+    transition:0.3s;
+}
+
+.nav-link::after{
+    content:'';
+    position:absolute;
+    width:0%;
+    height:3px;
+    background:#4ade80;
+    bottom:-5px;
+    right:0;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.nav-link:hover::after{
+    width:100%;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero{
+    min-height:100vh;
+
+    background:
+    linear-gradient(rgba(15,23,42,0.7),rgba(15,23,42,0.7)),
+    url('https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=1400')
+    center/cover no-repeat;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:100px 20px;
+    color:white;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.hero-badge{
+    background:rgba(255,255,255,0.12);
+    border:1px solid rgba(255,255,255,0.2);
+    display:inline-block;
+    padding:10px 25px;
+    border-radius:50px;
+    margin-bottom:25px;
+    font-size:15px;
+    backdrop-filter:blur(10px);
+}
+
+.hero h1{
+    font-size:72px;
+    font-weight:900;
+    line-height:1.3;
+    margin-bottom:25px;
+}
+
+.hero p{
+    font-size:22px;
+    line-height:2;
+    color:#e2e8f0;
+}
+
+.hero-buttons{
+    margin-top:40px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn-main{
+    background:linear-gradient(135deg,#246bfd,#4f46e5);
+    color:white;
+    padding:15px 38px;
+    border:none;
+    border-radius:50px;
+    font-size:17px;
+    font-weight:700;
+    transition:0.4s;
+    text-decoration:none;
+    box-shadow:0 10px 25px rgba(37,99,235,0.3);
+}
+
+.btn-main:hover{
+    transform:translateY(-5px);
+    color:white;
+}
+
+.btn-outline-custom{
+    border:2px solid white;
+    color:white;
+    padding:15px 38px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:700;
+    transition:0.4s;
+}
+
+.btn-outline-custom:hover{
+    background:white;
+    color:#111827;
+}
+
+/* =========================================
+   SECTION TITLE
+========================================= */
+
+.section{
+    padding:100px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.section-title span{
+    color:var(--primary);
+    font-weight:700;
+    display:block;
+    margin-bottom:15px;
+}
+
+.section-title h2{
+    font-size:48px;
+    font-weight:900;
+    color:var(--secondary);
+}
+
+.section-title p{
+    color:var(--gray);
+    margin-top:20px;
+    font-size:18px;
+}
+
+/* =========================================
+   PRODUCT CARDS
+========================================= */
+
+.product-card{
+    background:white;
+    border-radius:30px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    transition:0.5s;
+    position:relative;
+    height:100%;
+}
+
+.product-card:hover{
+    transform:translateY(-12px);
+}
+
+.product-image{
+    position:relative;
+    overflow:hidden;
+}
+
+.product-image img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    transition:0.5s;
+}
+
+.product-card:hover img{
+    transform:scale(1.1);
+}
+
+.product-badge{
+    position:absolute;
+    top:20px;
+    right:20px;
+    background:#ef4444;
+    color:white;
+    padding:8px 18px;
+    border-radius:50px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.product-content{
+    padding:30px;
+}
+
+.product-content h4{
+    font-weight:800;
+    margin-bottom:15px;
+    color:#0f172a;
+}
+
+.product-content p{
+    color:#64748b;
+    line-height:1.9;
+    margin-bottom:20px;
+}
+
+.price{
+    font-size:28px;
+    font-weight:900;
+    color:var(--primary);
+    margin-bottom:20px;
+}
+
+.btn-product {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg, #246bfd, #4f46e5);
+    color: white;
+
+    padding: 14px;
+    border-radius: 15px;
+
+    font-weight: bold;
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.btn-product:hover {
+    transform: scale(1.03);
+}
+/* =========================================
+   SERVICES
+========================================= */
+
+.service-box{
+    background:white;
+    padding:45px 30px;
+    border-radius:30px;
+    text-align:center;
+    box-shadow:var(--shadow);
+    transition:0.4s;
+    height:100%;
+}
+
+.service-box:hover{
+    transform:translateY(-10px);
+}
+
+.service-icon{
+    width:90px;
+    height:90px;
+    background:linear-gradient(135deg,#246bfd,#4f46e5);
+    color:white;
+    font-size:35px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:auto;
+    margin-bottom:25px;
+}
+
+.service-box h4{
+    font-weight:800;
+    margin-bottom:15px;
+}
+
+/* =========================================
+   OFFERS
+========================================= */
+
+.offer-section{
+    background:
+    linear-gradient(rgba(15,23,42,0.9),rgba(15,23,42,0.9)),
+    url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=1400')
+    center/cover;
+
+    border-radius:40px;
+    padding:80px 40px;
+    color:white;
+    text-align:center;
+}
+
+.offer-section h2{
+    font-size:55px;
+    font-weight:900;
+}
+
+.offer-section p{
+    margin-top:20px;
+    font-size:20px;
+    color:#cbd5e1;
+}
+
+/* =========================================
+   STATS
+========================================= */
+
+.stats{
+    margin-top:60px;
+}
+
+.stat-box{
+    background:white;
+    border-radius:25px;
+    padding:35px;
+    text-align:center;
+    box-shadow:var(--shadow);
+}
+
+.stat-box h3{
+    font-size:45px;
+    font-weight:900;
+    color:var(--primary);
+}
+
+.stat-box p{
+    margin-top:10px;
+    color:#64748b;
+    font-weight:600;
+}
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.contact-box{
+    background:white;
+    border-radius:30px;
+    padding:50px;
+    box-shadow:var(--shadow);
+}
+
+.form-control{
+    border-radius:15px;
+    padding:15px;
+    border:1px solid #dbeafe;
+}
+
+.form-control:focus{
+    box-shadow:none;
+    border-color:#246bfd;
+}
+
+/* =========================================
+   WHATSAPP
+========================================= */
+
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    left:20px;
+    width:70px;
+    height:70px;
+    background:#25D366;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:34px;
+    text-decoration:none;
+    z-index:999;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    transition:0.3s;
+}
+
+.whatsapp:hover{
+    transform:scale(1.1);
+    color:white;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer{
+    background:#0f172a;
+    color:white;
+    padding:35px 0;
+    text-align:center;
+    margin-top:80px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:992px){
+
+    .hero h1{
+        font-size:52px;
+    }
+
+    .section-title h2{
+        font-size:38px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .hero{
+        min-height:auto;
+        padding:130px 20px 100px;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .section{
+        padding:70px 0;
+    }
+
+    .section-title h2{
+        font-size:32px;
+    }
+
+    .offer-section h2{
+        font-size:38px;
+    }
+
+    .contact-box{
+        padding:30px 20px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .btn-main,
+    .btn-outline-custom{
+        width:100%;
+    }
+
+
+
+        .product-card:hover,
+    .service-box:hover,
+    .stat-box:hover{
+
+        transform:
+        translateY(-8px);
+    }
+
+    .hero::before,
+    .hero::after{
+
+        width:300px;
+        height:300px;
+    }
+
+}
+
+
+
+
+
+
+/* =========================================================
+   EQUAL HEIGHT CARDS
+========================================================= */
+
+.row{
+    align-items:stretch;
+}
+
+.product-card{
+
+    height:100%;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.product-content{
+
+    flex:1;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.product-content p{
+    flex-grow:1;
+}
+
+.product-footer{
+    margin-top:auto;
+}
+
+
+/* =========================================================
+   GLOBAL ANIMATIONS
+========================================================= */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:
+        translateY(60px);
+    }
+
+    to{
+        opacity:1;
+        transform:
+        translateY(0);
+    }
+}
+
+
+@keyframes zoomIn{
+
+    from{
+        opacity:0;
+        transform:scale(0.8);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+
+@keyframes floating{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+
+@keyframes pulseGlow{
+
+    0%{
+        box-shadow:
+        0 0 0 rgba(37,99,235,0.2);
+    }
+
+    50%{
+        box-shadow:
+        0 0 40px rgba(37,99,235,0.4);
+    }
+
+    100%{
+        box-shadow:
+        0 0 0 rgba(37,99,235,0.2);
+    }
+}
+
+
+/* =========================================================
+   HERO ANIMATIONS
+========================================================= */
+
+.hero-badge{
+    animation:
+    zoomIn 1s ease;
+}
+
+.hero h1{
+    animation:
+    fadeUp 1s ease;
+}
+
+.hero p{
+    animation:
+    fadeUp 1.3s ease;
+}
+
+.hero-buttons{
+    animation:
+    fadeUp 1.6s ease;
+}
+
+
+/* =========================================================
+   FLOATING EFFECTS
+========================================================= */
+
+.hero::before{
+    animation:
+    floating 7s ease-in-out infinite;
+}
+
+.hero::after{
+    animation:
+    floating 9s ease-in-out infinite;
+}
+
+.whatsapp{
+    animation:
+    floating 3s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   PRODUCT CARDS ANIMATION
+========================================================= */
+
+.product-card{
+
+    animation:
+    fadeUp 1s ease;
+
+    will-change:
+    transform;
+}
+
+.product-card:hover{
+
+    transform:
+    translateY(-18px)
+    scale(1.02);
+
+    box-shadow:
+    0 35px 70px rgba(0,0,0,0.16);
+}
+
+.product-card:hover .product-image img{
+
+    transform:
+    scale(1.15)
+    rotate(2deg);
+}
+
+
+/* =========================================================
+   SERVICE BOX ANIMATION
+========================================================= */
+
+.service-box{
+
+    animation:
+    zoomIn 1s ease;
+
+    transition:
+    all 0.5s ease;
+}
+
+.service-box:hover{
+
+    transform:
+    translateY(-15px)
+    scale(1.03);
+}
+
+.service-box:hover .service-icon{
+
+    animation:
+    pulseGlow 2s infinite;
+}
+
+
+/* =========================================================
+   BUTTON EFFECTS
+========================================================= */
+
+.btn-main,
+.btn-product,
+.btn-outline-custom{
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.btn-main::before,
+.btn-product::before,
+.btn-outline-custom::before{
+
+    content:'';
+
+    position:absolute;
+
+    width:40px;
+    height:200%;
+
+    background:
+    rgba(255,255,255,0.25);
+
+    top:-50%;
+    left:-120px;
+
+    transform:
+    rotate(25deg);
+
+    transition:
+    0.8s;
+}
+
+.btn-main:hover::before,
+.btn-product:hover::before,
+.btn-outline-custom:hover::before{
+
+    left:130%;
+}
+
+.btn-main:hover,
+.btn-product:hover{
+
+    transform:
+    translateY(-5px)
+    scale(1.03);
+}
+
+
+/* =========================================================
+   IMAGE HOVER EFFECT
+========================================================= */
+
+.product-image{
+    overflow:hidden;
+}
+
+.product-image img{
+
+    transition:
+    transform 0.7s ease,
+    filter 0.5s ease;
+}
+
+.product-card:hover img{
+
+    filter:
+    brightness(1.08);
+}
+
+
+/* =========================================================
+   OFFER SECTION EFFECT
+========================================================= */
+
+.offer-section{
+
+    animation:
+    zoomIn 1.2s ease;
+}
+
+.offer-section::before{
+
+    animation:
+    floating 10s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   STAT BOX EFFECT
+========================================================= */
+
+.stat-box{
+
+    transition:
+    all 0.5s ease;
+}
+
+.stat-box:hover{
+
+    transform:
+    translateY(-12px)
+    scale(1.03);
+}
+
+
+/* =========================================================
+   CONTACT EFFECT
+========================================================= */
+
+.contact-box{
+
+    animation:
+    fadeUp 1s ease;
+}
+
+.form-control{
+
+    transition:
+    all 0.4s ease;
+}
+
+.form-control:focus{
+
+    transform:
+    translateY(-3px);
+}
+
+
+/* =========================================================
+   SCROLL REVEAL EFFECT
+========================================================= */
+
+.section-title,
+.product-card,
+.service-box,
+.stat-box,
+.contact-box{
+
+    opacity:0;
+
+    animation:
+    fadeUp 1s ease forwards;
+}
+
+.product-card:nth-child(1){
+    animation-delay:0.1s;
+}
+
+.product-card:nth-child(2){
+    animation-delay:0.2s;
+}
+
+.product-card:nth-child(3){
+    animation-delay:0.3s;
+}
+
+.product-card:nth-child(4){
+    animation-delay:0.4s;
+}
+
+.product-card:nth-child(5){
+    animation-delay:0.5s;
+}
+
+.product-card:nth-child(6){
+    animation-delay:0.6s;
+}
+
+
+/* =========================================================
+   PREMIUM GLASS EFFECT
+========================================================= */
+
+.navbar{
+
+    border-bottom:
+    1px solid rgba(255,255,255,0.08);
+}
+
+.hero-badge{
+
+    box-shadow:
+    0 10px 30px rgba(255,255,255,0.08);
+}
+
+
+ 
+
+
+
+
+
+
+/* =========================================================
+   PERFORMANCE OPTIMIZATION
+========================================================= */
+
+.product-card,
+.service-box,
+.stat-box,
+.btn-main,
+.btn-product,
+.btn-outline-custom,
+.hero-content{
+
+    transform:translateZ(0);
+
+    backface-visibility:hidden;
+
+    will-change:
+    transform,
+    opacity;
+}
+
+
+/* =========================================================
+   BETTER HERO EFFECT
+========================================================= */
+
+.hero{
+    position:relative;
+    overflow:hidden;
+}
+
+.hero::before{
+
+    content:'';
+
+    position:absolute;
+
+    width:600px;
+    height:600px;
+
+    background:
+    radial-gradient(
+        rgba(37,99,235,0.25),
+        transparent
+    );
+
+    top:-250px;
+    left:-200px;
+
+    border-radius:50%;
+
+    filter:blur(40px);
+
+    animation:
+    floating 8s ease-in-out infinite;
+}
+
+.hero::after{
+
+    content:'';
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    background:
+    radial-gradient(
+        rgba(79,70,229,0.2),
+        transparent
+    );
+
+    bottom:-220px;
+    right:-150px;
+
+    border-radius:50%;
+
+    filter:blur(40px);
+
+    animation:
+    floating 10s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   IMPROVED PRODUCT CARD
+========================================================= */
+
+.product-card{
+
+    border:
+    1px solid rgba(255,255,255,0.7);
+
+    transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+.product-card:hover{
+
+    transform:
+    translateY(-14px);
+
+    box-shadow:
+    0 30px 60px rgba(0,0,0,0.12);
+}
+
+.product-card:hover .product-image img{
+
+    transform:
+    scale(1.08);
+}
+
+
+/* =========================================================
+   IMPROVED BUTTONS
+========================================================= */
+
+.btn-main,
+.btn-product{
+
+    background-size:
+    200% auto;
+
+    transition:
+    0.5s ease;
+}
+
+.btn-main:hover,
+.btn-product:hover{
+
+    background-position:
+    right center;
+}
+
+
+/* =========================================================
+   BETTER SERVICE BOX
+========================================================= */
+
+.service-box{
+
+    border:
+    1px solid rgba(37,99,235,0.08);
+}
+
+.service-box:hover{
+
+    transform:
+    translateY(-10px);
+
+    box-shadow:
+    0 25px 50px rgba(37,99,235,0.12);
+}
+
+
+/* =========================================================
+   CLEANER SCROLL ANIMATION
+========================================================= */
+
+.section-title,
+.product-card,
+.service-box,
+.stat-box,
+.contact-box{
+
+    opacity:0;
+
+    animation:
+    fadeUp 0.9s ease forwards;
+}
+
+.col-lg-4:nth-child(1) .product-card{
+    animation-delay:0.1s;
+}
+
+.col-lg-4:nth-child(2) .product-card{
+    animation-delay:0.2s;
+}
+
+.col-lg-4:nth-child(3) .product-card{
+    animation-delay:0.3s;
+}
+
+.col-lg-4:nth-child(4) .product-card{
+    animation-delay:0.4s;
+}
+
+.col-lg-4:nth-child(5) .product-card{
+    animation-delay:0.5s;
+}
+
+.col-lg-4:nth-child(6) .product-card{
+    animation-delay:0.6s;
+}
+
+
+/* =========================================================
+   BETTER MOBILE EXPERIENCE
+========================================================= */
+
+@media(max-width:768px){
+
+    .hero h1{
+        line-height:1.5;
+    }
+
+    .product-card:hover,
+    .service-box:hover,
+    .stat-box:hover{
+
+        transform:
+        translateY(-6px);
+    }
+
+    .hero::before,
+    .hero::after{
+
+        width:250px;
+        height:250px;
+    }
+
+}
+
+
+
+
+
+
+.location-card{
+    background:white;
+    padding:40px 30px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    transition:0.3s;
+    max-width:400px;
+    margin:auto;
+}
+
+.location-card:hover{
+    transform:translateY(-8px);
+}
+
+.location-icon{
+    width:80px;
+    height:80px;
+    margin:auto;
+    margin-bottom:20px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+    background:linear-gradient(135deg,#246bfd,#4f46e5);
+
+    color:white;
+    font-size:32px;
+}
+
+.location-card h3{
+    font-size:28px;
+    font-weight:800;
+    margin-bottom:15px;
+}
+
+.location-card p{
+    color:#666;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+ 
+
+ 
