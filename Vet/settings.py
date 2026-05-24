@@ -20,10 +20,8 @@ ALLOWED_HOSTS = [
 # =========================
 INSTALLED_APPS = [
     'cloudinary',
-   
-
     'app_vet',
-
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -96,23 +94,21 @@ USE_TZ = True
 # STATIC FILES
 # =========================
 STATIC_URL = '/static/'
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'Vet/static')
-]
-
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'Vet/static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
  
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
-    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
-    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
-}
+import cloudinary
 
+cloudinary.config(
+    cloud_name=os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    api_key=os.environ.get('CLOUDINARY_API_KEY'),
+    api_secret=os.environ.get('CLOUDINARY_API_SECRET'),
+    secure=True
+)
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
