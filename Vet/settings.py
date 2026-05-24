@@ -7,9 +7,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # =========================
 # SECURITY
 # =========================
-SECRET_KEY = 'django-insecure-_myn$*#%=gu2@kig_92+aemkt+ktvpajc4!%t^hhwz)4paso$)'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-dev-only')
 DEBUG = False
-ALLOWED_HOSTS = ['*']
+
+ALLOWED_HOSTS = [
+    'vet-clinic-4xk6.onrender.com',
+]
 
 
 # =========================
@@ -56,7 +59,7 @@ WSGI_APPLICATION = 'Vet.wsgi.application'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR , 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -90,7 +93,7 @@ USE_TZ = True
 
 
 # =========================
-# STATIC FILES (WhiteNoise)
+# STATIC FILES
 # =========================
 STATIC_URL = '/static/'
 
@@ -101,39 +104,30 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
-STORAGES = {
-    "default": {
-        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
-    },
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
-}
-
-STATICFILES_IGNORE_PATTERNS = [
-    'cloudinary/*',
-]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
- 
+
+
+
+
+
+
+
+
+
 # =========================
-# CLOUDINARY (MEDIA FILES)
+# MEDIA (CLOUDINARY)
 # =========================
-import cloudinary
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'Root',
-    'API_KEY': '169419662824352',
-    'API_SECRET': 'ZSEX2',
+    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
 }
-
-
-
-
- 
 
 
 # =========================
