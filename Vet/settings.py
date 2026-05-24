@@ -110,9 +110,9 @@ STORAGES = {
     },
 }
 
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
+STATICFILES_IGNORE_PATTERNS = [
+    'cloudinary/*',
+]
 
 
 MEDIA_URL = '/media/'
