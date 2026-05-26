@@ -11,6 +11,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-dev-only')
 DEBUG = False
 
 ALLOWED_HOSTS = [
+    '178.105.198.148',
+    '127.0.0.1',
+    'localhost',
     'vet-clinic-4xk6.onrender.com',
 ]
 
@@ -113,7 +116,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
-
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 
 
